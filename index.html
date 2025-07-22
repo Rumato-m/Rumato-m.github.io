@@ -3,220 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rumato – Möbel mit Charakter</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Rumato Möbel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --accent: #8c8c8c;
-    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      color: #111;
+      background-color: #fff;
       line-height: 1.6;
     }
     header {
-      padding: 24px 5%;
+      padding: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #e0e0e0;
-      position: relative;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 600;
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 24px;
+      gap: 2rem;
     }
     nav ul li {
       position: relative;
     }
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-size: 1rem;
-      transition: color 0.3s;
+    nav ul li:hover ul {
+      display: block;
     }
-    nav a:hover {
-      color: var(--accent);
-    }
-    .dropdown {
+    nav ul li ul {
+      display: none;
       position: absolute;
       top: 100%;
       left: 0;
       background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      display: none;
-      flex-direction: column;
-      min-width: 180px;
-      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
     }
-    nav ul li:hover .dropdown {
-      display: flex;
-    }
-    .dropdown a {
-      padding: 12px 16px;
-      white-space: nowrap;
-      font-size: 0.95rem;
+    nav ul li ul li {
+      margin-bottom: 0.5rem;
     }
     .hero {
-      min-height: 80vh;
+      height: 70vh;
+      background: url('images/hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero a {
+      background-color: #000;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+    footer {
+      margin-top: 4rem;
+    }
+    .footer-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-row {
+      display: flex;
+      width: 100%;
+    }
+    .footer-left {
+      flex: 1;
+      background-color: #f5f5f5;
+      padding: 4rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer-left img {
+      height: 50px;
+    }
+    .footer-right {
+      flex: 2;
+      background-color: #1a1a1a;
+      color: #ccc;
+      padding: 3rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 5%;
-      background-color: #f6f6f6;
+      align-items: flex-start;
+      gap: 1.5rem;
     }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 16px;
-      max-width: 720px;
-    }
-    .hero p {
-      font-size: 1.15rem;
-      margin-bottom: 32px;
-      max-width: 600px;
-      color: #444;
-    }
-    .hero a {
-      background: black;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-    .hero a:hover {
-      background: #333;
-    }
-    footer {
-      background-color: #f2f2f2;
-      padding: 48px 5%;
+    .footer-right nav ul {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-    .footer-col {
-      flex: 1 1 200px;
-      margin: 16px 0;
-    }
-    .footer-col h4 {
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .footer-col ul {
+      gap: 1.5rem;
       list-style: none;
+      padding: 0;
     }
-    .footer-col ul li {
-      margin-bottom: 8px;
-    }
-    .footer-col a {
+    .footer-right nav ul li a {
+      color: #ccc;
       text-decoration: none;
-      color: #333;
-      transition: color 0.3s;
+      font-size: 0.9rem;
     }
-    .footer-col a:hover {
-      color: #000;
-    }
-    .footer-bottom {
-      text-align: center;
-      padding: 16px 0;
-      font-size: 0.85rem;
-      color: #777;
+    .footer-right p {
+      font-size: 0.8rem;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">Rumato</div>
+    <h2>Rumato</h2>
     <nav>
       <ul>
-        <li>
-          <a href="#buero">Büro</a>
-          <div class="dropdown">
-            <a href="#res">Empfangstresen</a>
-            <a href="#warte">Wartebereich</a>
-          </div>
+        <li>Büro
+          <ul>
+            <li><a href="#">Empfangstheken</a></li>
+            <li><a href="#">Wartebereich</a></li>
+          </ul>
         </li>
-        <li>
-          <a href="#betten">Betten</a>
-          <div class="dropdown">
-            <a href="#kinder">Kinderbetten</a>
-          </div>
+        <li>Betten
+          <ul>
+            <li><a href="#">Einzelbetten</a></li>
+            <li><a href="#">Kinderbetten</a></li>
+          </ul>
         </li>
-        <li><a href="#sofas">Sofas</a></li>
-        <li><a href="#terrasse">Terrasse</a></li>
-        <li><a href="#paneele">Wandpaneele</a></li>
-        <li>
-          <a href="#beauty">Beauty</a>
-          <div class="dropdown">
-            <a href="#pedikuer">Pedikürstühle</a>
-            <a href="#manikuer">Manikürtische</a>
-            <a href="#regale">Regalsysteme</a>
-            <a href="#schraenke">Schränke</a>
-          </div>
+        <li><a href="#">Sofas</a></li>
+        <li><a href="#">Gartenmöbel</a></li>
+        <li><a href="#">Wandpaneele</a></li>
+        <li>Beauty
+          <ul>
+            <li><a href="#">Pedikürstühle</a></li>
+            <li><a href="#">Manikürtische</a></li>
+            <li><a href="#">Regalsysteme</a></li>
+            <li><a href="#">Schränke</a></li>
+          </ul>
         </li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Form trifft Funktion</h1>
-    <p>Designmöbel für Büro, Zuhause und Salon. Zeitlos. Anpassbar. Handgefertigt.</p>
-    <a href="#kollektion">Kollektion entdecken</a>
+    <div>
+      <h1>Designmöbel für moderne Räume</h1>
+      <a href="#">Kollektion entdecken</a>
+    </div>
   </section>
 
   <footer>
-    <div class="footer-col">
-      <h4>Rumato</h4>
-      <ul>
-        <li><a href="#">Über uns</a></li>
-        <li><a href="#">Kontakt</a></li>
-        <li><a href="#">Standorte</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Kollektionen</h4>
-      <ul>
-        <li><a href="#buero">Büro</a></li>
-        <li><a href="#betten">Betten</a></li>
-        <li><a href="#sofas">Sofas</a></li>
-        <li><a href="#terrasse">Terrasse</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Rechtliches</h4>
-      <ul>
-        <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">AGB</a></li>
-        <li><a href="#">Impressum</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Folgen Sie uns</h4>
-      <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Pinterest</a></li>
-        <li><a href="#">LinkedIn</a></li>
-      </ul>
+    <div class="footer-wrapper">
+      <div class="footer-row">
+        <div class="footer-left">
+          <img src="images/logo.png" alt="Rumato Logo">
+        </div>
+        <div class="footer-right">
+          <nav>
+            <ul>
+              <li><a href="#">Büro</a></li>
+              <li><a href="#">Betten</a></li>
+              <li><a href="#">Sofas</a></li>
+              <li><a href="#">Gartenmöbel</a></li>
+              <li><a href="#">Beauty</a></li>
+            </ul>
+          </nav>
+          <p>© 2025 Rumato Möbel. Alle Rechte vorbehalten.</p>
+          <p>Kontakt: info@rumato.de</p>
+        </div>
+      </div>
     </div>
   </footer>
-  <div class="footer-bottom">© 2025 Rumato. Alle Rechte vorbehalten.</div>
+
 </body>
 </html>
