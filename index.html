@@ -3,49 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rumato – Designmöbel für Büro, Zuhause & Beauty</title>
+  <title>Rumato – Möbel mit Charakter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --accent: #8c8c8c;
+    }
+    * {
       margin: 0;
-      font-family: "Helvetica Neue", sans-serif;
-      color: #111;
-      background-color: #fff;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
     header {
-      padding: 20px 40px;
+      padding: 24px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #f7f7f7;
-      border-bottom: 1px solid #ddd;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      position: relative;
     }
     .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+    nav ul li {
+      position: relative;
     }
     nav a {
-      margin: 0 12px;
       text-decoration: none;
-      color: #222;
-      font-weight: 500;
+      color: var(--text);
+      font-size: 1rem;
+      transition: color 0.3s;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: var(--accent);
+    }
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: none;
+      flex-direction: column;
+      min-width: 180px;
+      z-index: 10;
+    }
+    nav ul li:hover .dropdown {
+      display: flex;
+    }
+    .dropdown a {
+      padding: 12px 16px;
+      white-space: nowrap;
+      font-size: 0.95rem;
     }
     .hero {
-      padding: 100px 40px;
-      background: url('images/hero.jpg') center/cover no-repeat;
-      color: #fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 5%;
+      background-color: #f6f6f6;
     }
     .hero h1 {
-      font-size: 48px;
-      max-width: 700px;
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+      max-width: 720px;
     }
     .hero p {
-      font-size: 20px;
+      font-size: 1.15rem;
+      margin-bottom: 32px;
       max-width: 600px;
+      color: #444;
+    }
+    .hero a {
+      background: black;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    .hero a:hover {
+      background: #333;
     }
   </style>
 </head>
@@ -53,20 +110,40 @@
   <header>
     <div class="logo">Rumato</div>
     <nav>
-      <a href="#buero">Büro</a>
-      <a href="#betten">Betten</a>
-      <a href="#sofas">Sofas</a>
-      <a href="#terrasse">Terrasse</a>
-      <a href="#paneele">Wandpaneele</a>
-      <a href="#beauty">Beauty-Salon</a>
+      <ul>
+        <li>
+          <a href="#buero">Büro</a>
+          <div class="dropdown">
+            <a href="#res">Empfangstresen</a>
+            <a href="#warte">Wartebereich</a>
+          </div>
+        </li>
+        <li>
+          <a href="#betten">Betten</a>
+          <div class="dropdown">
+            <a href="#kinder">Kinderbetten</a>
+          </div>
+        </li>
+        <li><a href="#sofas">Sofas</a></li>
+        <li><a href="#terrasse">Terrasse</a></li>
+        <li><a href="#paneele">Wandpaneele</a></li>
+        <li>
+          <a href="#beauty">Beauty</a>
+          <div class="dropdown">
+            <a href="#pedikuer">Pedikürstühle</a>
+            <a href="#manikuer">Manikürtische</a>
+            <a href="#regale">Regalsysteme</a>
+            <a href="#schraenke">Schränke</a>
+          </div>
+        </li>
+      </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Designmöbel, die Räume verändern</h1>
-    <p>Individuelle Möbel für Büro, Zuhause, Terrasse und Beauty-Salons. Hochwertig. Modern. Direkt von Rumato.</p>
+    <h1>Form trifft Funktion</h1>
+    <p>Designmöbel für Büro, Zuhause und Salon. Zeitlos. Anpassbar. Handgefertigt.</p>
+    <a href="#kollektion">Kollektion entdecken</a>
   </section>
-
-  <!-- Weiter идет добавление секций под каждую категорию (например Büro, Betten и т.д.)-->
 </body>
 </html>
